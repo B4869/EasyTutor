@@ -1,0 +1,80 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 64px); /* ความสูงของหน้าจอหักลบกับความสูงของ navbar */
+  }
+  
+  .login-box {
+    background-color: #ffffff; /* พื้นหลังขาว */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .logo h1 {
+    color: #008080; /* สีฟ้าน้ำทะเล */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    color: #666666;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .login-button {
+    background-color: #008080; /* ปุ่มสีฟ้าน้ำทะเล */
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #007070; /* สีเข้มขึ้นเมื่อ hover */
+  }
+  
+  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .links a {
+    color: #008080;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  
+  .links a:hover {
+    text-decoration: underline;
+  }
+  

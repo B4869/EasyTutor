@@ -12,6 +12,9 @@ module.exports = {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      prompt: ['Prompt', 'sans-serif'], /* เพิ่มฟอนต์ Prompt ใน Tailwind */
+    },
   },
   plugins: [],
 };
