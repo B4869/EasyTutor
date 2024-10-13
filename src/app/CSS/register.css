@@ -1,0 +1,123 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 100px); 
+    padding: 20px;
+}
+
+.register-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    margin: 40px 16px;
+}
+
+.logo h1 {
+    color: #0056b3;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.input-group label {
+    display: block;
+    color: #444444;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 0.875rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.register-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.register-button:hover {
+    background-color: #004080;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .register-box {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.login-button {
+    background-color: transparent;
+    border: 2px solid #0056b3;
+    color: #0056b3;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #cccccc;
+    margin: 0 10px;
+}
+
+.text-size {
+    font-size: 15px;
+    color: #666666;
+}
