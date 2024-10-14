@@ -1,0 +1,144 @@
+/* Container for all courses */
+/* .all-courses-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+} */
+
+/* Courses list container */
+.all-courses-container-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center; /* จัดรายการคอร์สชิดซ้าย */
+  margin: 0 auto; /* ทำให้คอนเทนเนอร์อยู่ตรงกลาง */
+  padding: 20px;
+}
+
+/* Individual course box */
+.box-course {
+  flex: 1 1 calc(25% - 24px); /* เริ่มต้นที่ 4 คอร์สต่อแถว */
+  margin-bottom: 35px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-course:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Course image styling */
+.box-course img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Course title and price */
+.box-course span {
+  margin-left: 5px;
+}
+
+/* Course information */
+.info-1 {
+  font-size: 13px;
+  color: #3a79d1;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.info-2 {
+  font-size: 16px;
+  color: #333;
+  --max-line: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-line);
+  margin-bottom: 8px;
+}
+
+/* Footer info (price and star rating) */
+.info-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Star Rating */
+.star {
+  font-size: 17px;
+  color: #ccc;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #f4b400;
+}
+
+/* Price */
+.info-3_2 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1200px) {
+  .box-course {
+    flex: 1 1 calc(33.33% - 24px); /* 3 คอร์สต่อแถว */
+  }
+}
+
+@media (max-width: 992px) {
+  .box-course {
+    flex: 1 1 calc(50% - 24px); /* 2 คอร์สต่อแถว */
+  }
+}
+
+@media (max-width: 768px) {
+  .box-course {
+    flex: 1 1 calc(100% - 24px); /* 1 คอร์สต่อแถว */
+  }
+
+  .info-1,
+  .info-2,
+  .info-3_2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .box-course {
+    padding: 10px; /* ลด padding สำหรับหน้าจอขนาดเล็ก */
+  }
+
+  .info-1,
+  .info-2,
+  .info-3_2 {
+    font-size: 13px;
+  }
+}
+
+/* Search bar styling */
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin: 0 auto 20px auto; /* จัดแถบค้นหาให้อยู่ตรงกลางและเพิ่ม margin ล่าง */
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}

@@ -7,7 +7,7 @@ export default function Login() {
         {
             email: "admin@gmail.com",
             password: "admin1234",
-            role: "admin"
+            role: "admin1234"
         },
         {
             email: "user@gmail.com",
@@ -46,6 +46,10 @@ export default function Login() {
             setIsAuthenticated(true);
             setError('');
 
+            // Store login state in localStorage
+            localStorage.setItem('isLoggedIn', true);
+            localStorage.setItem('role', user.role); // Store user role            
+
             // จดจำรหัสผ่านใน localStorage ถ้าผู้ใช้เลือก remember
             if (remember) {
                 localStorage.setItem('rememberMe', JSON.stringify({ email, password }));
@@ -83,7 +87,6 @@ export default function Login() {
                             placeholder="กรอกอีเมลของคุณ"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            required 
                         />
                     </div>
                     <div className="input-group">
@@ -95,7 +98,6 @@ export default function Login() {
                             autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            required 
                         />
                     </div>
                     {error && <p className="error-message">{error}</p>}

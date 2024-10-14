@@ -1,6 +1,8 @@
 'use client';
 import React, { useRef } from 'react';
 import RecomendCourseList from './components/RecomendCourseList';
+import NewCourseList from './components/NewCourseList';
+import AllCourseList from './components/AllCourseList';
 import './CSS/home.css';
 
 export default function Home() {
@@ -37,9 +39,13 @@ export default function Home() {
       <h1>คอร์สเรียนใหม่ล่าสุด</h1>
       <div className="course-container">
         <button className="scroll-btn left" onClick={scrollLeftNew}>{'<'}</button>
-        <RecomendCourseList recomendCourseListRef={newCourseListRef} />
+        <NewCourseList newCourseListRef={newCourseListRef} />
         <button className="scroll-btn right" onClick={scrollRightNew}>{`>`}</button>
       </div>
-    </>
+      <h1>คอร์สเรียนทั้งหมด</h1>
+      <div className="courses-container">
+      <AllCourseList />
+      </div>
+      </>
   );
 }
