@@ -1,11 +1,12 @@
 'use client';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import RecomendCourseList from './components/RecomendCourseList';
 import NewCourseList from './components/NewCourseList';
 import AllCourseList from './components/AllCourseList';
 import './CSS/home.css';
 
 export default function Home() {
+  const [searchText, setSearchText] = useState('');
   const recomendCourseListRef = useRef(null); // Ref สำหรับ "คอร์สเรียนแนะนำ"
   const newCourseListRef = useRef(null); // Ref สำหรับ "คอร์สเรียนใหม่ล่าสุด"
 
@@ -44,7 +45,7 @@ export default function Home() {
       </div>
       <h1>คอร์สเรียนทั้งหมด</h1>
       <div className="courses-container">
-      <AllCourseList />
+      <AllCourseList searchText={searchText} />
       </div>
       </>
   );

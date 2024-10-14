@@ -158,4 +158,23 @@ h1 {
   display: none;
 }
 
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  margin: 0 auto 30px auto; /* จัดแถบค้นหาให้อยู่ตรงกลางและเพิ่ม margin ล่าง */
+  margin-top: 50px;
+  display: block;
+  border: 2px solid #3a79d1; /* เพิ่มความชัดเจนของขอบ */
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #f9f9f9; /* สีพื้นหลังอ่อน */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  transition: box-shadow 0.3s ease; /* เพิ่ม transition ให้เงา */
+}
 
+.search-input:focus {
+  outline: none; /* ลบขอบที่เป็นค่าเริ่มต้น */
+  border-color: #0056b3; /* เปลี่ยนสีขอบเมื่อโฟกัส */
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2); /* เพิ่มเงาเมื่อโฟกัส */
+}

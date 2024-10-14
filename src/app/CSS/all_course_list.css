@@ -131,14 +131,8 @@
   }
 }
 
-/* Search bar styling */
-.search-bar {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 15px;
-  margin: 0 auto 20px auto; /* จัดแถบค้นหาให้อยู่ตรงกลางและเพิ่ม margin ล่าง */
-  display: block;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
+.no-results {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
 }
