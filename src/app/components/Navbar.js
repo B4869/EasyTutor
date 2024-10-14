@@ -11,6 +11,15 @@ const navigation = [
     current: false,
     showIfLoggedIn: true,
     showIfLoggedOut: true,
+    showIfIsAdmin: false,  // ไม่ต้องแสดงเฉพาะแอดมิน
+  },
+  {
+    name: 'เพิ่มคอร์สเรียน',
+    href: '/pages/add_course',
+    current: false,
+    showIfLoggedIn: true,
+    showIfLoggedOut: false,
+    showIfIsAdmin: true,  // แสดงเฉพาะแอดมิน
   },
   {
     name: 'สมัครสมาชิก',
@@ -18,6 +27,7 @@ const navigation = [
     current: true,
     showIfLoggedIn: false,
     showIfLoggedOut: true,
+    showIfIsAdmin: false
   },
   {
     name: 'ออกจากระบบ',
@@ -25,6 +35,7 @@ const navigation = [
     current: false,
     showIfLoggedIn: true,
     showIfLoggedOut: false,
+    showIfIsAdmin: false  // แสดงสำหรับทุกบทบาทที่ล็อกอิน
   },
 ];
 
@@ -83,7 +94,11 @@ export default function Navbar() {
               <div className="hidden sm:flex flex-1 items-center justify-end sm:items-stretch sm:justify-end">
                 <div className="desktop-menu flex space-x-4">
                   {navigation
-                    .filter((item) => (isLoggedIn ? item.showIfLoggedIn : item.showIfLoggedOut))
+                    .filter((item) => 
+                      (isLoggedIn ? item.showIfLoggedIn : item.showIfLoggedOut) &&
+                      // เงื่อนไขให้แสดงเฉพาะเมนูของแอดมินเมื่อ userRole เป็น 'admin'
+                      (!item.showIfIsAdmin || userRole === 'admin')
+                    )
                     .map((item) => {
                       const classes = classNames(
                         item.current ? 'active' : '',
@@ -121,7 +136,11 @@ export default function Navbar() {
           <Disclosure.Panel className="sm:hidden">
             <div className="mobile-menu-panel space-y-1 px-2 pb-3 pt-2">
               {navigation
-                .filter((item) => (isLoggedIn ? item.showIfLoggedIn : item.showIfLoggedOut))
+                .filter((item) => 
+                  (isLoggedIn ? item.showIfLoggedIn : item.showIfLoggedOut) &&
+                  // เงื่อนไขให้แสดงเฉพาะเมนูของแอดมินเมื่อ userRole เป็น 'admin'
+                  (!item.showIfIsAdmin || userRole === 'admin')
+                )
                 .map((item) => {
                   const classes = classNames(
                     item.current ? 'active' : '',

@@ -178,3 +178,128 @@ h1 {
   border-color: #0056b3; /* เปลี่ยนสีขอบเมื่อโฟกัส */
   box-shadow: 0 4px 12px rgba(0, 86, 179, 0.2); /* เพิ่มเงาเมื่อโฟกัส */
 }
+
+/* สำหรับ popup overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* ทำให้พื้นหลังโปร่งใสมากขึ้น */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px; /* เพิ่มขนาดสูงสุด */
+  height: auto; /* กำหนดความสูงตามเนื้อหา */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* ทำเงาให้ดูเด่น */
+  position: relative;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-image {
+  width: 100%;
+  max-height: 280px; /* กำหนดความสูงสูงสุดเพื่อไม่ให้เกิน container */
+  object-fit: cover; /* ทำให้ภาพปรับขนาดให้พอดีกับ container */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.popup-course-name {
+  font-size: 26px; /* เพิ่มขนาดข้อความ */
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+.popup-why-take {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #555; /* สีที่เข้มขึ้นเล็กน้อยเพื่ออ่านง่าย */
+  line-height: 1.6; /* ทำให้มีระยะห่างระหว่างบรรทัด */
+}
+
+.popup-start-date {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.popup-detal-review {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+  margin-left: 4px;
+  display: block;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: flex-end; /* จัดปุ่มไปทางด้านขวา */
+  margin-top: 20px;
+}
+
+.popup-button {
+  padding: 12px 30px; /* ขยายขนาดปุ่ม */
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* ขยายขนาดตัวอักษรในปุ่ม */
+  transition: background-color 0.3s;
+}
+
+.popup-button:hover {
+  background-color: #3a79d1;
+}
+
+.course-stars {
+  display: flex;
+  justify-content: start; /* จัดดาวให้อยู่ตรงกลาง */
+  margin-bottom: 0px;
+}
+
+.course-stars .star {
+  color: #ccc;
+  font-size: 22px; /* เพิ่มขนาดดาว */
+}
+
+.course-stars .star.filled {
+  color: #ffdd00; /* ดาวที่ถูกเติมเต็มเป็นสีเหลือง */
+}
+
+/* Tutor profile image styling */
+.tutor-section {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.tutor-profile {
+  width: 40px; /* ขนาดของรูปโปรไฟล์ */
+  height: 40px; /* ทำให้สูงเท่ากับกว้าง */
+  border-radius: 50%; /* ทำให้เป็นวงกลม */
+  object-fit: cover; /* ทำให้รูปครอบพื้นที่อย่างพอดี */
+  margin-right: 10px; /* ระยะห่างระหว่างรูปกับชื่อ */
+}
+
+.popup-tutor-name {
+  margin-left: 5px;
+  font-size: 15px;
+  color: #333;
+  display: block;
+  font-weight: bold;
+}

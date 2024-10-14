@@ -7,7 +7,7 @@ export default function Login() {
         {
             email: "admin@gmail.com",
             password: "admin1234",
-            role: "admin1234"
+            role: "admin"
         },
         {
             email: "user@gmail.com",
@@ -55,8 +55,12 @@ export default function Login() {
                 localStorage.setItem('rememberMe', JSON.stringify({ email, password }));
             }
 
+            if (user.role === 'admin') {
+                localStorage.setItem('isAdmin', true);
+            }
+
             // Redirect to the appropriate page based on user role
-            window.location.href = user.role === 'admin' ? '/pages/all_course' : '/pages/user';
+            window.location.href = user.role === 'admin' ? '/' : '/';
         } else {
             setError('อีเมลหรือรหัสผ่านไม่ถูกต้อง');
         }

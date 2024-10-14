@@ -38,6 +38,7 @@ export default function Register() {
         // If no errors, proceed with the form submission logic
         setError(''); // Clear any previous errors
         console.log('Registration attempt:', { name, surname, email, password });
+        window.location.href = '/pages/login';
     };
 
     return (
