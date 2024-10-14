@@ -1,16 +1,30 @@
 'use client'
 import '../../CSS/login.css'; // Importing CSS
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Login() {
+    const account = [
+        {
+            email: "admin@gmail.com",
+            password: "admin1234",
+            role: "admin"
+        },
+        {
+            email: "user@gmail.com",
+            password: "user1234",
+            role: "user"
+        }
+    ];
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [remember, setRemember] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         // Basic validation checks
         if (!email) {
             setError('กรุณากรอกอีเมล');
@@ -22,10 +36,37 @@ export default function Login() {
             return;
         }
 
-        // If no errors, proceed with the form submission logic
-        setError(''); // Clear any previous errors
-        console.log('Login attempt:', { email, password, remember });
+        // ตรวจสอบข้อมูลผู้ใช้จาก account array
+        const user = account.find(
+            (acc) => acc.email === email && acc.password === password
+        );
+
+        if (user) {
+            // ล็อกอินสำเร็จ
+            setIsAuthenticated(true);
+            setError('');
+
+            // จดจำรหัสผ่านใน localStorage ถ้าผู้ใช้เลือก remember
+            if (remember) {
+                localStorage.setItem('rememberMe', JSON.stringify({ email, password }));
+            }
+
+            // Redirect to the appropriate page based on user role
+            window.location.href = user.role === 'admin' ? '/pages/all_course' : '/pages/user';
+        } else {
+            setError('อีเมลหรือรหัสผ่านไม่ถูกต้อง');
+        }
     };
+
+    // Effect to handle remembered login
+    useEffect(() => {
+        const remembered = JSON.parse(localStorage.getItem('rememberMe'));
+        if (remembered) {
+            setEmail(remembered.email);
+            setPassword(remembered.password);
+            setRemember(true);
+        }
+    }, []);
 
     return (
         <div className="login-container">
@@ -42,7 +83,7 @@ export default function Login() {
                             placeholder="กรอกอีเมลของคุณ"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            aria-label="Email input"
+                            required 
                         />
                     </div>
                     <div className="input-group">
@@ -54,7 +95,7 @@ export default function Login() {
                             autoComplete="current-password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            aria-label="Password input"
+                            required 
                         />
                     </div>
                     {error && <p className="error-message">{error}</p>}
@@ -65,7 +106,6 @@ export default function Login() {
                                 id="remember" 
                                 checked={remember}
                                 onChange={() => setRemember(!remember)}
-                                aria-label="Remember me checkbox"
                             />
                             <label htmlFor="remember"> จดจำรหัสผ่าน</label>
                         </div>

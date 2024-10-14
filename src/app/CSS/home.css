@@ -1,0 +1,159 @@
+h1 {
+  font-size: 2rem; /* ขนาดใหญ่สำหรับหัวข้อ */
+  font-weight: bold; /* ทำให้ตัวอักษรหนา */
+  color: #222222; /* ใช้สีเข้มที่ตรงกับธีม */
+  text-align: center; /* จัดกลาง */
+  margin-bottom: 20px; /* ระยะห่างด้านล่างเพื่อเว้นจากคอนเทนต์ */
+  margin-top: 35px;
+  padding-bottom: 10px; /* ระยะห่างด้านล่างของหัวข้อ */
+}
+
+/* Container and Layout */
+.course-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.course-list {
+  display: flex;
+  overflow: hidden;
+  gap: 10px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+/* Course Box */
+.box-course {
+  flex: 0 0 auto;
+  width: 225px; /* Reduced size by 25% */
+  margin-bottom: 35px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.box-course:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle hover effect */
+}
+
+.box-course img {
+  inline-size: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.box-course span {
+  margin-left: 2px;
+}
+
+/* Course Information */
+.info-1 {
+  font-size: 13px;
+  color: #3a79d1; /* Light blue for the price */
+  font-weight: 600;
+}
+
+.info-2 {
+  font-size: 16px;
+  --max-line: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-line);
+}
+
+.info-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-left: 2px;
+  margin-top: 20px; /* This will push .info-3 to the bottom */
+}
+
+/* Star Rating */
+.star {
+  font-size: 17px;
+  color: #ccc; /* Default color for empty stars */
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #f4b400; /* Gold color for filled stars */
+}
+
+/* Price */
+.info-3_2 {
+  font-size: 17px;
+  color: #000000; /* Black for the price */
+}
+
+/* Course Button */
+.course-btn-2 {
+  background-color: #3a79d1; /* Dark blue button */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.course-btn-2:hover {
+  background-color: #0056b3; /* Lighter blue on hover */
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #3a79d1; /* Dark blue */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  width: 35px;
+  height: 36px;
+  font-size: 1.3em;
+}
+
+.scroll-btn:hover {
+  background-color: #0056b3; /* Lighter blue on hover */
+}
+
+.scroll-btn.left {
+  left: 8px;
+}
+
+.scroll-btn.right {
+  right: 8px;
+}
+
+/* Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
